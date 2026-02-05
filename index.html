@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แมลงกับสังคมมนุษย์ | E-Learning</title>
+    <meta name="description" content="เรียนรู้เรื่องแมลงกับสังคมมนุษย์ พร้อมทำข้อสอบ 80 ข้อ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="page active">
+        <div class="container">
+            <div class="hero-card">
+                <div class="hero-icon">🦋</div>
+                <h1>แมลงกับสังคมมนุษย์</h1>
+                <p class="subtitle">Insect and Human Society</p>
+                <div class="info-badges">
+                    <span class="badge">📚 5 บท</span>
+                    <span class="badge">📝 80 ข้อ</span>
+                    <span class="badge">⏱️ ไม่จำกัดเวลา</span>
+                </div>
+                <div class="chapters-preview">
+                    <div class="chapter-item">
+                        <span class="chapter-num">1</span>
+                        <span>วิวัฒนาการของแมลงและยุคธรณีกาล</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-num">2</span>
+                        <span>อาณาจักรของสิ่งมีชีวิต</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-num">3</span>
+                        <span>การเปลี่ยนแปลงรูปร่างของแมลง</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-num">4</span>
+                        <span>การจัดจำแนกและแบ่งกลุ่มแมลง</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-num">5</span>
+                        <span>สัณฐานวิทยาของแมลง</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="showLearning()">
+                        <span>📖 เริ่มเรียน</span>
+                    </button>
+                    <button class="btn-secondary" onclick="startQuiz()">
+                        <span>📝 ทำข้อสอบเลย</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Content Page -->
+    <section id="learning" class="page">
+        <div class="container">
+            <!-- Chapter Navigation -->
+            <div class="learning-nav">
+                <button class="btn-back" onclick="showPage('landing')">← หน้าหลัก</button>
+                <div class="chapter-tabs" id="chapter-tabs">
+                    <button class="chapter-tab active" data-chapter="1">บทที่ 1</button>
+                    <button class="chapter-tab" data-chapter="2">บทที่ 2</button>
+                    <button class="chapter-tab" data-chapter="3">บทที่ 3</button>
+                    <button class="chapter-tab" data-chapter="4">บทที่ 4</button>
+                    <button class="chapter-tab" data-chapter="5">บทที่ 5</button>
+                </div>
+            </div>
+
+            <!-- Learning Content -->
+            <div class="learning-content" id="learning-content">
+                <!-- Content will be loaded dynamically -->
+            </div>
+
+            <!-- Chapter Navigation Bottom -->
+            <div class="learning-nav-bottom">
+                <button class="btn-nav btn-prev" id="btn-prev-chapter" onclick="prevChapter()">
+                    ← บทก่อนหน้า
+                </button>
+                <button class="btn-nav btn-next" id="btn-next-chapter" onclick="nextChapter()">
+                    บทถัดไป →
+                </button>
+            </div>
+
+            <!-- Start Quiz Button -->
+            <div class="start-quiz-section">
+                <p>อ่านครบทุกบทแล้ว พร้อมทำข้อสอบหรือยัง?</p>
+                <button class="btn-primary btn-start-quiz" onclick="startQuiz()">
+                    📝 เริ่มทำข้อสอบ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Page -->
+    <section id="quiz" class="page">
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span id="current-question">1</span> / <span id="total-questions">60</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="chapter-indicator" id="chapter-indicator">บทที่ 1</div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-number" id="question-number">ข้อที่ 1</span>
+                </div>
+                <p class="question-text" id="question-text">คำถามจะแสดงที่นี่...</p>
+
+                <div class="options-container" id="options-container">
+                    <!-- Options will be inserted here -->
+                </div>
+
+                <div class="explanation-box" id="explanation-box">
+                    <div class="explanation-header">
+                        <span class="explanation-icon">💡</span>
+                        <span>เฉลย</span>
+                    </div>
+                    <p id="explanation-text"></p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="nav-buttons">
+                <button class="btn-nav btn-prev" id="btn-prev" onclick="prevQuestion()">
+                    ← ก่อนหน้า
+                </button>
+                <button class="btn-nav btn-next" id="btn-next" onclick="nextQuestion()">
+                    ถัดไป →
+                </button>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn-submit" id="btn-submit" onclick="submitQuiz()">
+                ✅ ส่งคำตอบ
+            </button>
+        </div>
+    </section>
+
+    <!-- Result Page -->
+    <section id="result" class="page">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-icon" id="result-icon">🎉</div>
+                <h2>ผลการสอบ</h2>
+                <div class="score-display">
+                    <div class="score-circle" id="score-circle">
+                        <span class="score-number" id="score-number">0</span>
+                        <span class="score-total">/80</span>
+                    </div>
+                </div>
+                <div class="score-percent" id="score-percent">0%</div>
+                <div class="score-grade" id="score-grade">-</div>
+
+                <div class="chapter-scores" id="chapter-scores">
+                    <!-- Chapter scores will be inserted here -->
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn-primary" onclick="viewAnswers()">
+                        📋 ดูเฉลย
+                    </button>
+                    <button class="btn-secondary" onclick="restartQuiz()">
+                        🔄 ทำใหม่
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Answer Review Page -->
+    <section id="review" class="page">
+        <div class="container">
+            <div class="review-header">
+                <h2>📋 เฉลยข้อสอบ</h2>
+                <button class="btn-back" onclick="backToResult()">← กลับ</button>
+            </div>
+            <div class="review-container" id="review-container">
+                <!-- All questions with answers will be shown here -->
+            </div>
+            <button class="btn-secondary" onclick="restartQuiz()" style="margin-top: 2rem;">
+                🔄 ทำข้อสอบใหม่
+            </button>
+        </div>
+    </section>
+
+    <script src="content.js"></script>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

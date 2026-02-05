@@ -1,0 +1,21 @@
+# ไฟล์เอกสารต้นฉบับ
+*.pdf
+*.txt
+
+# ไฟล์ระบบ
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (ถ้ามีในอนาคต)
+node_modules/
+npm-debug.log
+
+# Vercel
+.vercel
