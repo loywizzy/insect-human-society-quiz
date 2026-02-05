@@ -582,12 +582,12 @@ function loadChapter(chapterNum) {
     // Update content
     const contentArea = document.getElementById('learning-content');
     contentArea.innerHTML = `
-    < div class="content-header" >
+        <div class="content-header">
             <h2>บทที่ ${chapterNum}: ${content.title}</h2>
             <p class="subtitle">${content.subtitle}</p>
-        </div >
-    ${content.content}
-`;
+        </div>
+        ${content.content}
+    `;
 
     // Update navigation
     updateChapterNav();
