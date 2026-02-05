@@ -316,12 +316,12 @@ const learningContent = {
         title: "การจัดจำแนกและแบ่งกลุ่มแมลง",
         subtitle: "Insect Classification & Orders",
         content: `
-    < div class="content-section" >
+            <div class="content-section">
                 <h3>🔍 Order ที่สำคัญของแมลง</h3>
                 <div class="info-box">
                     <p><strong>Order Coleoptera (ด้วง)</strong> มีจำนวนชนิดมากที่สุดในโลก คิดเป็น <strong>38%</strong> ของแมลงทั้งหมด!</p>
                 </div>
-            </div >
+            </div>
 
             <div class="content-section">
                 <h3>🌊 แมลงน้ำ - ดัชนีชี้วัดคุณภาพน้ำ</h3>
